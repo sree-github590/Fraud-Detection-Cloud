@@ -16,16 +16,16 @@ from sklearn.preprocessing import StandardScaler, PowerTransformer
 
 import streamlit as st
 
-import warnings
-warnings.filterwarnings("ignore")
-def check_auth():
-    response = requests.get("http://localhost:5000/check_auth")
-    return response.json().get("authenticated", False)
+# import warnings
+# warnings.filterwarnings("ignore")
+# def check_auth():
+#     # This should match the frontend authentication mechanism
+#     return st.session_state.get("loggedIn", False)
 
-# Redirect to login page if not authenticated
-if not check_auth():
-    st.warning("You are not authenticated. Please log in.")
-    st.stop()
+# if not check_auth():
+#     st.warning("You are not authenticated. Please log in.")
+#     st.stop()
+    
 
 
 # Title
@@ -476,4 +476,4 @@ if st.sidebar.checkbox('Manual transaction verification'):
             st.write("Legitimate transaction")
         elif prediction[0] == 1:
             st.write("Fraudulent transaction")
-# --- 5 CHECKBOX --
+# --- 5 CHECKBOX ---
